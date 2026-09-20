@@ -45,8 +45,8 @@
 
 | Project / Solution | Tech Stack | Highlights & Value |
 | :--- | :--- | :--- |
-| 📄 **PDFDiffPro** | C#, .NET, Document Processing | High-precision visual & text diff engine for complex documents. |
-| 🌐 **SkillDad Platform** | Web Tech, Responsive Design | Educational portal and digital learning content ecosystem. |
+| 📄 [**PDFDiffPro**](https://github.com/hassnasgari/PDFDiffPro) | C#, .NET, JS, Canvas | High-precision visual & text diff engine with desktop, web, and mobile support. |
+| 🌐 [**SkillDad Platform**](https://github.com/hassnasgari/SkillDad-Platform) | HTML5, CSS3, JS, PHP REST | Educational portal, digital magazine, video learning hub & developer tools. |
 | 🤖 **Custom Web & Automation Bots** | C#, PowerShell, Scraping | Automated data pipelines, web crawlers, and task scheduling. |
 | 📊 **Enterprise Management Tools** | .NET, EF Core, SQL Server | Personnel management, PM planning, and database sync utilities. |
 
