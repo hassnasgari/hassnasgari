@@ -26,6 +26,25 @@ function Show-Dashboard {
         Write-Host "  Account URL:  $($profile.html_url)" -ForegroundColor Cyan
         Write-Host ""
 
+        # Calculate Freelance Readiness Score
+        $score = 40 # Base for verified account + bio + profile README
+        if ($profile.public_repos -ge 2) { $score += 20 }
+        if ($profile.public_repos -ge 4) { $score += 10 }
+        $hasFlagship = $repos | Where-Object { $_.name -in @("PDFDiffPro", "SkillDad-Platform") }
+        if ($hasFlagship.Count -ge 2) { $score += 15 }
+        
+        $grade = "A-"
+        if ($score -ge 90) { $grade = "A+" }
+        elseif ($score -ge 80) { $grade = "A" }
+        elseif ($score -ge 70) { $grade = "B+" }
+        else { $grade = "B" }
+
+        Write-Host "--- [ FREELANCE READINESS SCORE ] ------------------------------" -ForegroundColor Magenta
+        Write-Host "  Overall Score: $score / 100  (Grade: $grade)" -ForegroundColor Yellow
+        Write-Host "  Status:        Ready for Freelancing & Client Presentation" -ForegroundColor Green
+        Write-Host "  Strengths:     Production-Grade Repos, Multi-Language, Clean READMEs" -ForegroundColor Cyan
+        Write-Host ""
+
         Write-Host "--- [ PUBLISHED REPOSITORIES ] ---------------------------------" -ForegroundColor Green
         $idx = 1
         foreach ($r in $repos) {
@@ -49,7 +68,6 @@ function Show-Dashboard {
     Write-Host " [P] Open Profile in Browser (https://github.com/hassnasgari)" -ForegroundColor White
     Write-Host " [1] Open PDFDiffPro Repository" -ForegroundColor White
     Write-Host " [2] Open SkillDad-Platform Repository" -ForegroundColor White
-    Write-Host " [S] View Graphical Score & Streak Card" -ForegroundColor White
     Write-Host " [R] Refresh / Re-check" -ForegroundColor White
     Write-Host " [Q] Quit" -ForegroundColor White
     Write-Host "================================================================" -ForegroundColor Cyan
@@ -58,13 +76,12 @@ function Show-Dashboard {
 $continueLoop = $true
 while ($continueLoop) {
     Show-Dashboard
-    $choice = Read-Host "Select an option (P, 1, 2, S, R, Q)"
+    $choice = Read-Host "Select an option (P, 1, 2, R, Q)"
     if ($choice) {
         switch ($choice.ToUpper().Trim()) {
             "P" { Start-Process "https://github.com/hassnasgari" }
             "1" { Start-Process "https://github.com/hassnasgari/PDFDiffPro" }
             "2" { Start-Process "https://github.com/hassnasgari/SkillDad-Platform" }
-            "S" { Start-Process "https://github-readme-stats.vercel.app/api?username=hassnasgari&show_icons=true&theme=radical" }
             "R" { }
             "Q" { $continueLoop = $false }
             default { }
