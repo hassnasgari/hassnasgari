@@ -1,6 +1,6 @@
 # Active Job Tracking - LaborX
 
-## Active Offers Sent (Total Pipeline Value: $1,730 USD)
+## Active Offers Sent (Total Pipeline Value: $1,670 USD)
 
 ### 1. simple server to serve as access for my SQLite Database
 - **Client:** Aimen
@@ -56,19 +56,17 @@
 
 ---
 
-### 6. react developer for portfolio website
+## Closed / Declined Offers
+
+### 1. react developer for portfolio website
 - **Client:** NIKHIL KADAM
-- **Budget:** $60 USD (USDT / Crypto Escrow)
-- **Status:** Offer Sent (Deliverable 100% built & preview ready on local system)
-- **Delivery Time:** 1 Day (Instant delivery ready)
-- **Local Deliverables:**
-  - `react_portfolio_showcase\index.html`
-  - `react_portfolio_showcase\run_preview.bat`
-- **Focus:** Modern responsive UI, clean React component architecture, performance & speed.
+- **Budget:** $60 USD
+- **Status:** Declined by client (23 Sep 2026)
+- **Local Asset Retained:** `react_portfolio_showcase` (Clean React portfolio template available for future clients / portfolio use).
 
 ---
 
-## Active Bounties (Superteam Earn - Total Prize Pool: $1,000 USDC)
+## Active Bounties (Superteam Earn - Total Prize Pool: $1,300 USDC)
 
 ### 1. Spout Finance Product Feedback (Beta Intelligence Challenge)
 - **Sponsor:** Spout Finance
@@ -79,6 +77,19 @@
 - **Live Submission Deliverable:**
   - `https://github.com/hassnasgari/hassnasgari/blob/main/spout_finance_review/SPOUT_FINANCE_DEEP_DIVE_REPORT.md`
 - **Scope:** 0% interest covered call model teardown, 50% LTV dynamics, UX friction audit, and 5 strategic product recommendations.
+
+---
+
+### 2. Moony Tips With Flipcash (X Educational Thread Challenge)
+- **Sponsor:** Moony Foundation Inc.
+- **Platform:** Superteam Earn (Global)
+- **Total Prize Pool:** 300 USDC (1st: 150, 2nd: 100, 3rd: 50)
+- **Status:** SUBMITTED & RECEIVED! (Confirmed on-chain submission with Confetti)
+- **Winner Announcement:** October 06, 2026
+- **Live Submission Deliverable:**
+  - `https://x.com/gmlasg/status/2102677046661153031?s=20`
+- **Scope:** 7-part educational thread covering broken creator economy, Flipcash interactive Tip Cards, video overlays, and instant permissionless Moony tipping on Solana with 0% fees.
+
 
 
 
