@@ -66,7 +66,7 @@
 
 ---
 
-## Active Bounties (Superteam Earn - Total Prize Pool: $1,300 USDC)
+## Active Bounties (Superteam Earn - Total Prize Pool: $1,800 USDC)
 
 ### 1. Spout Finance Product Feedback (Beta Intelligence Challenge)
 - **Sponsor:** Spout Finance
@@ -89,6 +89,19 @@
 - **Live Submission Deliverable:**
   - `https://x.com/gmlasg/status/2102677046661153031?s=20`
 - **Scope:** 7-part educational thread covering broken creator economy, Flipcash interactive Tip Cards, video overlays, and instant permissionless Moony tipping on Solana with 0% fees.
+
+---
+
+### 3. Stealf On-Chain Privacy & Shielded Wallets (X Thread Challenge)
+- **Sponsor:** Stealf (@STEALFxyz / @Arcium)
+- **Platform:** Superteam Earn (Global)
+- **Total Prize Pool:** 500 USDC
+- **Status:** SUBMITTED & RECEIVED! (Confirmed on-chain submission with Confetti)
+- **Winner Announcement:** October 04, 2026
+- **Live Submission Deliverable:**
+  - Published on X by `@gmlasg`
+- **Scope:** 5-part educational thread covering public ledger surveillance risks, Stealf dual-wallet architecture (Shielded Wallet + Spending Account), Arcium confidential computing, and open beta traction.
+
 
 
 
