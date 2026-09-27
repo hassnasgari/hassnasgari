@@ -1,0 +1,30 @@
+{
+  "manifest_version": "1.0",
+  "name": "Anna Agentic Workflow Studio",
+  "app_id": "anna-agentic-studio",
+  "version": "1.0.0",
+  "description": "Enterprise-grade multi-agent autonomous task orchestrator and research intelligence platform for Anna AI OS.",
+  "author": "Hassan Asgari (HassanDev)",
+  "category": "Productivity & Developer Tools",
+  "tags": ["AI Agents", "LLM", "Workflow", "Orchestrator", "Research"],
+  "entry_point": "index.html",
+  "permissions": [
+    "network:read",
+    "storage:local",
+    "executa:tools"
+  ],
+  "executa_tools": [
+    {
+      "name": "decompose_task",
+      "description": "Breaks down complex user objectives into structured multi-step execution graphs."
+    },
+    {
+      "name": "market_research_oracle",
+      "description": "Fetches, analyzes, and correlates on-chain and web3 market intelligence."
+    },
+    {
+      "name": "synthesize_report",
+      "description": "Generates executive intelligence reports in markdown format with action items."
+    }
+  ]
+}
