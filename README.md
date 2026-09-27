@@ -45,6 +45,7 @@
 
 | Project / Solution | Tech Stack | Highlights & Value |
 | :--- | :--- | :--- |
+| 🍽️ [**TasteCraft Web App**](https://github.com/hassnasgari/hassnasgari/tree/main/restaurant_food_delivery_app) | HTML5, CSS3, JavaScript, WhatsApp API | Modern restaurant food delivery & grocery ordering platform with live QR table stands & instant WhatsApp checkout. |
 | 📄 [**PDFDiffPro**](https://github.com/hassnasgari/PDFDiffPro) | C#, .NET, JS, Canvas | High-precision visual & text diff engine with desktop, web, and mobile support. |
 | 🌐 [**SkillDad Platform**](https://github.com/hassnasgari/SkillDad-Platform) | HTML5, CSS3, JS, PHP REST | Educational portal, digital magazine, video learning hub & developer tools. |
 | 🤖 **Custom Web & Automation Bots** | C#, PowerShell, Scraping | Automated data pipelines, web crawlers, and task scheduling. |
