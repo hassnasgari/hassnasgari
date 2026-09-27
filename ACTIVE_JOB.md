@@ -37,9 +37,15 @@
 ### 4. build restaurant food delivery grocery web app
 - **Client:** Riad Hifri
 - **Budget:** $500 USD (USDT / Crypto Escrow)
-- **Status:** Offer Sent (Waiting for client response)
-- **Delivery Time:** 1-3 Days
-- **Focus:** Mobile-responsive ordering app, QR menu, WhatsApp integration.
+- **Status:** Offer Sent (Deliverable 100% built, verified & demo ready)
+- **Delivery Time:** Instant Delivery (Tested via browser automation)
+- **Local Deliverables:**
+  - `restaurant_food_delivery_app\index.html`
+  - `restaurant_food_delivery_app\style.css`
+  - `restaurant_food_delivery_app\app.js`
+  - `restaurant_food_delivery_app\run_demo.bat`
+  - `restaurant_food_delivery_app\README.md`
+- **Focus:** Mobile-responsive ordering app, QR menu with table stand picker, instant WhatsApp order formatting.
 
 ---
 

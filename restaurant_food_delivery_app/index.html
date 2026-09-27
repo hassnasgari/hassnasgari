@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TasteCraft & Grocery | Online Food & Market Delivery</title>
+  <meta name="description" content="Order fresh artisan meals and daily grocery essentials with instant WhatsApp ordering and QR code table service.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="navbar" id="mainNavbar">
+    <div class="nav-container">
+      <div class="brand">
+        <div class="logo-badge">🍽️</div>
+        <div class="brand-text">
+          <span class="brand-name">TasteCraft</span>
+          <span class="brand-subtitle">& Fresh Grocery</span>
+        </div>
+      </div>
+
+      <div class="store-status-pill">
+        <span class="status-dot"></span>
+        <span class="status-text"><strong>Open Now</strong> • 25–35 min Delivery</span>
+      </div>
+
+      <div class="nav-actions">
+        <button class="btn-qr-menu" id="openQrBtn" title="Scan Table QR Menu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="7" height="7"></rect>
+            <rect x="14" y="3" width="7" height="7"></rect>
+            <rect x="14" y="14" width="7" height="7"></rect>
+            <rect x="3" y="14" width="7" height="7"></rect>
+          </svg>
+          <span class="qr-btn-text">QR Menu</span>
+        </button>
+
+        <button class="cart-trigger-btn" id="openCartBtn" aria-label="View Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-label">Cart</span>
+          <span class="cart-count-badge" id="cartCountBadge">0</span>
+          <span class="cart-total-preview" id="cartTotalPreview">$0.00</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Promotional Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="hero-tag">🔥 Instant Ordering via WhatsApp & QR</div>
+      <h1 class="hero-title">Delicious Gourmet Food & Organic Market Delivered to You</h1>
+      <p class="hero-desc">Enjoy hand-crafted artisan pizzas, premium smash burgers, fresh sushi, and farm-fresh grocery delivered directly to your door in minutes.</p>
+      
+      <div class="hero-search-wrapper">
+        <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search pizza, smash burger, sushi, fresh fruits..." autocomplete="off">
+        <button class="search-clear-btn" id="searchClearBtn" style="display: none;">✕</button>
+      </div>
+
+      <div class="hero-highlights">
+        <span class="highlight-item">✅ Zero Service Fees</span>
+        <span class="highlight-item">⚡ 100% WhatsApp Direct Confirmation</span>
+        <span class="highlight-item">📱 Table QR Ordering Ready</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Container / Category Tabs & Catalog -->
+  <main class="main-container">
+    <!-- Category Filter Bar -->
+    <div class="category-nav-wrapper">
+      <div class="category-tabs" id="categoryTabs">
+        <button class="category-tab active" data-category="all">
+          <span class="tab-emoji">✨</span> All Items
+        </button>
+        <button class="category-tab" data-category="pizza">
+          <span class="tab-emoji">🍕</span> Artisan Pizza
+        </button>
+        <button class="category-tab" data-category="burger">
+          <span class="tab-emoji">🍔</span> Gourmet Burgers
+        </button>
+        <button class="category-tab" data-category="sushi">
+          <span class="tab-emoji">🍣</span> Japanese Sushi
+        </button>
+        <button class="category-tab" data-category="grocery">
+          <span class="tab-emoji">🥦</span> Fresh Grocery
+        </button>
+        <button class="category-tab" data-category="dessert">
+          <span class="tab-emoji">🍰</span> Desserts & Drinks
+        </button>
+      </div>
+    </div>
+
+    <!-- Section Title & Item Counter -->
+    <div class="catalog-header">
+      <div>
+        <h2 class="catalog-title" id="catalogSectionTitle">All Featured Items</h2>
+        <p class="catalog-subtitle" id="catalogSubtitle">Showing handcrafted chef meals and daily fresh market arrivals</p>
+      </div>
+      <div class="filter-count" id="itemCountDisplay">16 items available</div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Injected dynamically via app.js -->
+    </div>
+  </main>
+
+  <!-- Slide-Over Shopping Cart Drawer -->
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="drawer-header">
+      <div class="drawer-title-box">
+        <span class="drawer-icon">🛒</span>
+        <h3>Your Order Summary</h3>
+      </div>
+      <button class="drawer-close-btn" id="closeCartBtn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div class="order-type-selector">
+      <button class="type-btn active" id="typeDeliveryBtn" data-type="delivery">
+        🛵 Home Delivery
+      </button>
+      <button class="type-btn" id="typeDineInBtn" data-type="dinein">
+        🍽️ Dine-in / Table
+      </button>
+    </div>
+
+    <!-- Table Number Option (Conditional) -->
+    <div class="dinein-box" id="dineInBox" style="display: none;">
+      <label for="tableNumberInput">Select Table Number:</label>
+      <select id="tableNumberInput">
+        <option value="Table 01">Table 01 - Main Hall</option>
+        <option value="Table 02">Table 02 - Main Hall</option>
+        <option value="Table 03">Table 03 - Patio / Outdoor</option>
+        <option value="Table 04">Table 04 - VIP Lounge</option>
+        <option value="Table 05">Table 05 - Terrace View</option>
+      </select>
+    </div>
+
+    <!-- Cart Items Scroll Area -->
+    <div class="cart-items-container" id="cartItemsList">
+      <!-- Items dynamically populated -->
+      <div class="empty-cart-state" id="emptyCartState">
+        <div class="empty-cart-icon">🛍️</div>
+        <h4>Your cart is empty</h4>
+        <p>Explore our menu and add your favorite meals or groceries to start ordering.</p>
+      </div>
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="drawer-footer" id="drawerFooter" style="display: none;">
+      <div class="price-breakdown">
+        <div class="price-row">
+          <span>Subtotal</span>
+          <span id="subtotalPrice">$0.00</span>
+        </div>
+        <div class="price-row" id="deliveryRow">
+          <span>Delivery Fee</span>
+          <span id="deliveryPrice">$2.50</span>
+        </div>
+        <div class="price-row total-row">
+          <span>Total Amount</span>
+          <span id="totalPrice" class="highlight-total">$0.00</span>
+        </div>
+      </div>
+
+      <!-- Checkout Form Fields -->
+      <div class="checkout-fields">
+        <div class="input-group">
+          <label for="customerName">Your Full Name <span class="required">*</span></label>
+          <input type="text" id="customerName" placeholder="e.g. David Miller" required>
+        </div>
+        <div class="input-group">
+          <label for="customerPhone">Phone / WhatsApp Number <span class="required">*</span></label>
+          <input type="tel" id="customerPhone" placeholder="+1 555 123 4567" required>
+        </div>
+        <div class="input-group" id="addressInputGroup">
+          <label for="customerAddress">Delivery Address <span class="required">*</span></label>
+          <input type="text" id="customerAddress" placeholder="Street name, Building, Apartment number">
+        </div>
+        <div class="input-group">
+          <label for="orderNotes">Order Notes / Instructions (Optional)</label>
+          <textarea id="orderNotes" rows="2" placeholder="e.g. Extra spicy, leave at door, no onions"></textarea>
+        </div>
+      </div>
+
+      <!-- WhatsApp Order Trigger -->
+      <button class="btn-whatsapp-checkout" id="submitWhatsappOrderBtn">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.772.82 2.791.82 3.181 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.768-5.766zm9.969 5.766c0 5.518-4.482 10-10 10-1.748 0-3.385-.45-4.819-1.237l-5.181 1.359 1.385-5.059c-.86-1.488-1.385-3.218-1.385-5.063 0-5.518 4.482-10 10-10s10 4.482 10 10z"/>
+        </svg>
+        <span>Send Order via WhatsApp</span>
+      </button>
+      <div class="whatsapp-hint">Instant confirmation directly with restaurant staff</div>
+    </div>
+  </aside>
+
+  <!-- Table QR Menu Modal -->
+  <div class="modal-backdrop" id="qrModalBackdrop">
+    <div class="qr-modal-card">
+      <div class="modal-header">
+        <div class="modal-header-icon">📱</div>
+        <div>
+          <h3>Digital QR Menu & Order</h3>
+          <p>Dine-in customers can scan this QR code to view the menu on their phone.</p>
+        </div>
+        <button class="modal-close-btn" id="closeQrModalBtn">✕</button>
+      </div>
+
+      <div class="qr-preview-area">
+        <div class="qr-frame">
+          <canvas id="qrCanvas" width="220" height="220"></canvas>
+          <div class="qr-tagline">Scan with Smartphone Camera</div>
+        </div>
+
+        <div class="qr-config-panel">
+          <label for="qrTableSelect">Select Table Stand to Print:</label>
+          <select id="qrTableSelect">
+            <option value="01">Table #01 (Main Dining)</option>
+            <option value="02">Table #02 (Main Dining)</option>
+            <option value="03">Table #03 (Patio Garden)</option>
+            <option value="04">Table #04 (VIP Lounge)</option>
+            <option value="05">Table #05 (Terrace)</option>
+          </select>
+
+          <div class="qr-features-list">
+            <div class="feature-row">✨ Direct table identification in WhatsApp orders</div>
+            <div class="feature-row">⚡ No app download required for customers</div>
+            <div class="feature-row">🖨️ Ready to print for acrylic table tents</div>
+          </div>
+
+          <div class="modal-actions">
+            <button class="btn-print-qr" id="printQrBtn">
+              🖨️ Print Table Stand
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">🍽️ TasteCraft Express</span>
+        <p>Premium Food Delivery, Artisan Kitchen & Grocery Marketplace.</p>
+        <p class="copyright">© 2026 TasteCraft Technologies. Built for seamless high-conversion digital ordering.</p>
+      </div>
+      <div class="footer-badges">
+        <span class="badge">🚀 Fast 30-Min Delivery</span>
+        <span class="badge">💬 WhatsApp Connected</span>
+        <span class="badge">🔒 Verified Escrow Ready</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
