@@ -108,6 +108,22 @@
   - Published on X by `@gmlasg`
 - **Scope:** 5-part educational thread covering public ledger surveillance risks, Stealf dual-wallet architecture (Shielded Wallet + Spending Account), Arcium confidential computing, and open beta traction.
 
+---
+
+## Active Hackathons (DoraHacks - Total Prize Pool: $6,000 USD + $5,000 Monthly Grants)
+
+### 1. Anna AI App Builder Program
+- **Sponsor:** Anna AI OS
+- **Platform:** DoraHacks (Global)
+- **Total Prize Pool:** Up to $6,000 USD per App + Up to $5,000 Monthly Grants
+- **Status:** 100% SUBMITTED & RECEIVED INTO HACKATHON! (Under Review for $6,000 Prize & Monthly Grants)
+- **Total Competing Projects:** Only 1 competitor worldwide (`BUIDLS: 1`)
+- **Live BUIDL:** `Anna Agentic Studio`
+- **Confirmation:** Verified on DoraHacks platform
+- **GitHub Repository:**
+  - `https://github.com/hassnasgari/hassnasgari/tree/main/anna_agentic_ai_studio`
+- **Scope:** Autonomous multi-agent AI orchestrator with Executa tool calling engine, telemetry simulation, and Anna AI OS manifest compliance.
+
 
 
 
