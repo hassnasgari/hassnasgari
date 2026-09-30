@@ -116,13 +116,14 @@
 - **Sponsor:** Anna AI OS
 - **Platform:** DoraHacks (Global)
 - **Total Prize Pool:** Up to $6,000 USD per App + Up to $5,000 Monthly Grants
-- **Status:** 100% SUBMITTED & RECEIVED INTO HACKATHON! (Under Review for $6,000 Prize & Monthly Grants)
+- **Status:** OFFICIAL V1.0.1 SUBMITTED & PENDING REVIEW ON ANNA OS!
+- **Anna Platform App:** `@hassan-asgari/anna-agentic-studio` (App ID: 349)
+- **Anna Platform URL:** `https://anna.partners/anna-apps/@hassan-asgari/anna-agentic-studio`
 - **Total Competing Projects:** Only 1 competitor worldwide (`BUIDLS: 1`)
 - **Live BUIDL:** `Anna Agentic Studio`
-- **Confirmation:** Verified on DoraHacks platform
 - **GitHub Repository:**
   - `https://github.com/hassnasgari/hassnasgari/tree/main/anna_agentic_ai_studio`
-- **Scope:** Autonomous multi-agent AI orchestrator with Executa tool calling engine, telemetry simulation, and Anna AI OS manifest compliance.
+- **Scope:** Autonomous multi-agent AI orchestrator with Executa tool calling engine, schema 2 compliance, and verified bundle.
 
 
 
