@@ -1,30 +1,36 @@
 {
-  "manifest_version": "1.0",
-  "name": "Anna Agentic Workflow Studio",
-  "app_id": "anna-agentic-studio",
-  "version": "1.0.0",
-  "description": "Enterprise-grade multi-agent autonomous task orchestrator and research intelligence platform for Anna AI OS.",
-  "author": "Hassan Asgari (HassanDev)",
-  "category": "Productivity & Developer Tools",
-  "tags": ["AI Agents", "LLM", "Workflow", "Orchestrator", "Research"],
-  "entry_point": "index.html",
-  "permissions": [
-    "network:read",
-    "storage:local",
-    "executa:tools"
-  ],
-  "executa_tools": [
-    {
-      "name": "decompose_task",
-      "description": "Breaks down complex user objectives into structured multi-step execution graphs."
+  "schema": 2,
+  "required_executas": [],
+  "tags": ["ai-agents", "orchestrator", "productivity", "research"],
+  "ui": {
+    "bundle": {
+      "format": "static-spa",
+      "entry": "index.html",
+      "external_origins": [
+        "https://fonts.googleapis.com",
+        "https://fonts.gstatic.com"
+      ]
     },
-    {
-      "name": "market_research_oracle",
-      "description": "Fetches, analyzes, and correlates on-chain and web3 market intelligence."
+    "views": [
+      {
+        "name": "main",
+        "title": "Anna Agentic Studio",
+        "default": true,
+        "default_size": { "w": 1080, "h": 760 },
+        "min_size": { "w": 480, "h": 360 }
+      }
+    ],
+    "host_api": {
+      "tools": [],
+      "storage": ["get", "set"],
+      "window": ["set_title", "ready"]
     },
-    {
-      "name": "synthesize_report",
-      "description": "Generates executive intelligence reports in markdown format with action items."
-    }
-  ]
+    "csp_overrides": {},
+    "state_merge": "last_writer_wins"
+  },
+  "dev": {
+    "fixtures": [],
+    "seed_storage": {},
+    "user_id": 1
+  }
 }

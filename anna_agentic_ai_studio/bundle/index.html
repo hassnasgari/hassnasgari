@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna Agentic Studio | Multi-Agent AI Orchestrator</title>
+  <meta name="description" content="Autonomous multi-agent orchestration, tool calling and intelligence synthesis for Anna AI OS.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+  <!-- Top Bar -->
+  <header class="studio-header">
+    <div class="header-container">
+      <div class="header-brand">
+        <div class="brand-badge">⚡</div>
+        <div class="brand-info">
+          <span class="brand-title">Anna Agentic Studio</span>
+          <span class="brand-sub">Native Multi-Agent Orchestrator • Anna OS</span>
+        </div>
+      </div>
+
+      <div class="os-status-pill">
+        <span class="status-indicator"></span>
+        <span>Anna AI OS Runtime: <strong>v1.4.2 Connected</strong></span>
+      </div>
+
+      <div class="header-actions">
+        <span class="executa-badge">⚙️ Executa Tools Active</span>
+        <button class="btn-primary" id="openSettingsBtn">⚙️ Config</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Studio Workspace -->
+  <main class="studio-workspace">
+    <!-- Prompt Control Center -->
+    <section class="control-panel">
+      <div class="section-header">
+        <div class="tag-label">🎯 Autonomous Mission Directive</div>
+        <h2>Direct the Multi-Agent Swarm</h2>
+        <p>Input a high-level task. The autonomous agents will collaborate, invoke tools, and produce verified institutional intelligence.</p>
+      </div>
+
+      <div class="prompt-box-wrapper">
+        <textarea id="missionPromptInput" rows="3" placeholder="e.g. Conduct a deep research audit on Solana Tokenization supercycle, evaluate liquidity mechanics, and formulate strategic insights..."></textarea>
+        
+        <div class="prompt-controls-bar">
+          <div class="preset-pills">
+            <span class="preset-label">Quick Scenarios:</span>
+            <button class="preset-btn" data-preset="rwa">🌐 Solana RWA Supercycle</button>
+            <button class="preset-btn" data-preset="security">🔒 Smart Contract Audit</button>
+            <button class="preset-btn" data-preset="dex">📈 DEX Liquidity Arbitrage</button>
+          </div>
+
+          <button class="btn-launch-swarm" id="launchSwarmBtn">
+            <span class="launch-icon">🚀</span>
+            <span>Launch Agent Swarm</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Agent Pipeline Status Grid -->
+    <section class="agents-grid-section">
+      <div class="section-title-row">
+        <h3>Autonomous Agent Pipeline</h3>
+        <span class="swarm-state" id="swarmStateIndicator">Ready to Execute</span>
+      </div>
+
+      <div class="agents-grid">
+        <!-- Agent 1: Planner -->
+        <div class="agent-card" id="agentCard1">
+          <div class="agent-header">
+            <div class="agent-avatar planner-avatar">🧠</div>
+            <div class="agent-info">
+              <h4>Planner & Architect</h4>
+              <span class="agent-role">Task Decomposition</span>
+            </div>
+            <span class="agent-status-badge status-idle" id="statusBadge1">Idle</span>
+          </div>
+          <p class="agent-desc">Decomposes objectives into dependent sub-tasks and assigns tool dependencies.</p>
+          <div class="agent-metrics">
+            <span>Sub-tasks: <strong id="plannerTasksCount">0</strong></span>
+            <span>Est. Steps: <strong id="plannerStepsCount">0</strong></span>
+          </div>
+          <div class="agent-activity-box" id="activityBox1">Awaiting mission dispatch...</div>
+        </div>
+
+        <!-- Agent 2: Web & Market Oracle -->
+        <div class="agent-card" id="agentCard2">
+          <div class="agent-header">
+            <div class="agent-avatar oracle-avatar">🌐</div>
+            <div class="agent-info">
+              <h4>Web & Market Oracle</h4>
+              <span class="agent-role">Telemetry & Data Extraction</span>
+            </div>
+            <span class="agent-status-badge status-idle" id="statusBadge2">Idle</span>
+          </div>
+          <p class="agent-desc">Executes real-time data lookups, inspects on-chain metrics, and validates market sources.</p>
+          <div class="agent-metrics">
+            <span>Sources Scanned: <strong id="oracleSourcesCount">0</strong></span>
+            <span>Data Points: <strong id="oracleDataCount">0</strong></span>
+          </div>
+          <div class="agent-activity-box" id="activityBox2">Standing by for execution graph...</div>
+        </div>
+
+        <!-- Agent 3: Logic & Code Evaluator -->
+        <div class="agent-card" id="agentCard3">
+          <div class="agent-header">
+            <div class="agent-avatar logic-avatar">⚙️</div>
+            <div class="agent-info">
+              <h4>Logic & Risk Engine</h4>
+              <span class="agent-role">Validation & Computation</span>
+            </div>
+            <span class="agent-status-badge status-idle" id="statusBadge3">Idle</span>
+          </div>
+          <p class="agent-desc">Validates data integrity, tests edge cases, evaluates risk curves, and verifies logic.</p>
+          <div class="agent-metrics">
+            <span>Assertions: <strong id="logicTestsCount">0</strong></span>
+            <span>Risk Score: <strong id="logicRiskScore">-</strong></span>
+          </div>
+          <div class="agent-activity-box" id="activityBox3">Waiting for telemetry input...</div>
+        </div>
+
+        <!-- Agent 4: Synthesizer -->
+        <div class="agent-card" id="agentCard4">
+          <div class="agent-header">
+            <div class="agent-avatar synth-avatar">📝</div>
+            <div class="agent-info">
+              <h4>Executive Synthesizer</h4>
+              <span class="agent-role">Report & Artifact Generation</span>
+            </div>
+            <span class="agent-status-badge status-idle" id="statusBadge4">Idle</span>
+          </div>
+          <p class="agent-desc">Compiles outputs into verified reports, action checklists, and JSON deliverables.</p>
+          <div class="agent-metrics">
+            <span>Format: <strong>Executive Markdown</strong></span>
+            <span>Integrity: <strong id="synthIntegrity">-</strong></span>
+          </div>
+          <div class="agent-activity-box" id="activityBox4">Ready to compile final artifact...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Split View: Live Tool Log & Generated Report -->
+    <div class="execution-layout">
+      <!-- Live Terminal / Executa Tool Logs -->
+      <section class="terminal-panel">
+        <div class="panel-header">
+          <div class="header-left">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-title">Executa Live Tool Calling Stream</span>
+          </div>
+          <span class="terminal-counter" id="toolCallCounter">0 tool calls</span>
+        </div>
+        <div class="terminal-body" id="terminalLogs">
+          <div class="log-entry system-msg">[SYSTEM] Anna AI OS Agent Runtime v1.4.2 initialized.</div>
+          <div class="log-entry system-msg">[SYSTEM] Ready for autonomous multi-agent task dispatch.</div>
+        </div>
+      </section>
+
+      <!-- Synthesized Intelligence Report Output -->
+      <section class="report-panel">
+        <div class="panel-header">
+          <div class="header-left">
+            <span class="report-icon">📑</span>
+            <span class="report-title">Synthesized Intelligence Artifact</span>
+          </div>
+          <div class="report-actions">
+            <button class="btn-small" id="copyReportBtn">📋 Copy Markdown</button>
+            <button class="btn-small btn-highlight" id="downloadReportBtn">💾 Export .MD</button>
+          </div>
+        </div>
+        <div class="report-body" id="reportBody">
+          <div class="report-placeholder">
+            <div class="placeholder-icon">🤖</div>
+            <h4>No report generated yet</h4>
+            <p>Click "Launch Agent Swarm" above to trigger autonomous task decomposition and generate an institutional synthesis.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="studio-footer">
+    <div class="footer-container">
+      <span>Built for <strong>Anna AI OS App Builder Program</strong> on DoraHacks.</span>
+      <span>Engineered by <strong>Hassan Asgari (HassanDev)</strong> • MIT Open License</span>
+    </div>
+  </footer>
+
+  <script src="agent_engine.js"></script>
+</body>
+</html>
