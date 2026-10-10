@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Vance | Senior React & Frontend Engineer Portfolio</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- React 18 & Babel Standalone for Instant Local Preview without build steps -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    :root {
+      --bg-primary: #090d16;
+      --bg-secondary: #0f172a;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-hover: rgba(30, 41, 59, 0.85);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(56, 189, 248, 0.35);
+      --accent-cyan: #38bdf8;
+      --accent-blue: #6366f1;
+      --accent-purple: #a855f7;
+      --accent-green: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --gradient-main: linear-gradient(135deg, #38bdf8 0%, #6366f1 50%, #a855f7 100%);
+      --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      selection-background-color: #38bdf8;
+      selection-color: #000;
+    }
+
+    /* Ambient background glows */
+    .ambient-glow-1 {
+      position: fixed;
+      top: -10vw;
+      left: -10vw;
+      width: 45vw;
+      height: 45vw;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: -15vw;
+      right: -10vw;
+      width: 50vw;
+      height: 50vw;
+      background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, transparent 70%);
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Navbar */
+    header.navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      background: rgba(9, 13, 22, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--gradient-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.35);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent-cyan);
+    }
+
+    .btn-nav-hire {
+      padding: 9px 20px;
+      border-radius: 999px;
+      background: var(--gradient-main);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+    }
+
+    .btn-nav-hire:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(99, 102, 241, 0.5);
+    }
+
+    /* Container */
+    .main-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 24px 60px;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 40px 0 70px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #34d399;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+
+    .gradient-text {
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 13px 30px;
+      border-radius: 12px;
+      background: var(--gradient-main);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.98rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+      transition: all 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-secondary {
+      padding: 13px 30px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.98rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Metrics Grid */
+    .metrics-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin: 50px 0 80px;
+    }
+
+    .metric-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 22px 18px;
+      border-radius: 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-glow);
+    }
+
+    .metric-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+
+    .metric-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Section Headings */
+    .section-header {
+      margin-bottom: 34px;
+      text-align: left;
+    }
+
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 80px;
+    }
+
+    .skill-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      padding: 24px;
+      border-radius: 16px;
+      transition: all 0.25s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--border-glow);
+      background: var(--bg-card-hover);
+      transform: translateY(-3px);
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .skill-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .skill-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag-pill {
+      font-size: 0.76rem;
+      background: rgba(255, 255, 255, 0.06);
+      padding: 4px 10px;
+      border-radius: 6px;
+      color: #e2e8f0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Interactive Projects Filter & Cards */
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      background: var(--accent-cyan);
+      color: #090d16;
+      border-color: var(--accent-cyan);
+      font-weight: 700;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 26px;
+      margin-bottom: 80px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-glow);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-preview {
+      height: 180px;
+      position: relative;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .project-preview-mock {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent-cyan);
+      font-size: 0.85rem;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 12px 20px;
+      border-radius: 8px;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+    }
+
+    .project-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-category {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color: var(--accent-purple);
+      margin-bottom: 6px;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .project-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .project-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-project {
+      flex: 1;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-project-primary {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--accent-cyan);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-project-primary:hover {
+      background: var(--accent-cyan);
+      color: #090d16;
+    }
+
+    .btn-project-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-project-secondary:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Live Interactive Showcase Widget */
+    .interactive-section {
+      background: var(--bg-card);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .interactive-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-main);
+    }
+
+    .demo-flex {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    @media (max-width: 800px) {
+      .demo-flex { grid-template-columns: 1fr; }
+    }
+
+    .demo-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .demo-screen {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 24px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Contact & Hire Section */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.6) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 48px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 480px;
+      margin: 28px auto 0;
+    }
+
+    .form-input {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      padding: 14px 18px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-cyan);
+    }
+
+    .toast-success {
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid #10b981;
+      color: #34d399;
+      padding: 12px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      display: none;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 30px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-cyan);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect } = React;
+
+    const PROJECTS_DATA = [
+      {
+        id: 1,
+        title: "CryptoTracker AI Pro",
+        category: "React Apps",
+        description: "Real-time cryptocurrency analytics dashboard with live WebSockets, interactive price charts, rate-limit resilient queries, and instant token alerts.",
+        tags: ["React 18", "TypeScript", "Chart.js", "WebSockets", "CoinGecko API"],
+        status: "Production Ready"
+      },
+      {
+        id: 2,
+        title: "SaaS Cloud Data Hub",
+        category: "Full Stack",
+        description: "High-performance enterprise SQLite & REST CRUD management server with FastAPI backend, automated JWT auth, and a responsive React administration portal.",
+        tags: ["React", "FastAPI", "SQLite", "TailwindCSS", "Swagger"],
+        status: "Live Demo"
+      },
+      {
+        id: 3,
+        title: "OmniDelivery Food & QR Ordering",
+        category: "UI/UX",
+        description: "Mobile-first online food & grocery ordering app featuring interactive digital menus, instant cart state, WhatsApp order dispatching, and QR code integration.",
+        tags: ["React Mobile", "State Management", "WhatsApp API", "CSS Grid"],
+        status: "Featured Project"
+      },
+      {
+        id: 4,
+        title: "DevMetrics Analytics Dashboard",
+        category: "React Apps",
+        description: "Developer activity visualizer tracking Git commits, pull requests, workflow velocity, and repository health metrics with dark neon aesthetic.",
+        tags: ["React 18", "GitHub API", "Data Viz", "Framer Motion"],
+        status: "Open Source"
+      }
+    ];
+
+    const SKILLS_DATA = [
+      {
+        icon: "⚛️",
+        title: "React 18 & Modern Hooks",
+        description: "Proficient in reusable component architecture, custom hooks, Suspense, and state preservation with zero memory leaks.",
+        tags: ["React 18", "Custom Hooks", "Context API", "Zustand"]
+      },
+      {
+        icon: "⚡",
+        title: "High-Speed Performance",
+        description: "Lighthouse 95+ score optimization, dynamic code splitting, memoization, lazy loading, and asset minification.",
+        tags: ["Code Splitting", "Vite", "SSR/SSG", "SEO Best Practices"]
+      },
+      {
+        icon: "🎨",
+        title: "Responsive UI / UX Design",
+        description: "Pixel-perfect mobile, tablet, and widescreen layouts using modern CSS Grid, Flexbox, glassmorphism, and micro-interactions.",
+        tags: ["TailwindCSS", "CSS Modules", "Responsive", "Glassmorphism"]
+      },
+      {
+        icon: "🔗",
+        title: "API & Backend Integration",
+        description: "Seamless synchronization with REST, GraphQL, and WebSockets APIs, robust error handling, and rate-limit backoff logic.",
+        tags: ["Axios", "RESTful APIs", "FastAPI", "WebSockets"]
+      }
+    ];
+
+    function App() {
+      const [activeCategory, setActiveCategory] = useState("All");
+      const [visitorCount, setVisitorCount] = useState(142);
+      const [themeColor, setThemeColor] = useState("cyan");
+      const [formSubmitted, setFormSubmitted] = useState(false);
+      const [name, setName] = useState("");
+      const [email, setEmail] = useState("");
+
+      // Filter projects
+      const filteredProjects = activeCategory === "All" 
+        ? PROJECTS_DATA 
+        : PROJECTS_DATA.filter(p => p.category === activeCategory);
+
+      const handleContactSubmit = (e) => {
+        e.preventDefault();
+        if (name.trim() && email.trim()) {
+          setFormSubmitted(true);
+          setTimeout(() => setFormSubmitted(false), 5000);
+          setName("");
+          setEmail("");
+        }
+      };
+
+      return (
+        <div>
+          {/* Top Navbar */}
+          <header className="navbar">
+            <a href="#home" className="logo">
+              <div className="logo-badge">R</div>
+              <span>Portfolio<span style={{color: 'var(--accent-cyan)'}}>.dev</span></span>
+            </a>
+
+            <ul className="nav-links">
+              <li><a href="#about" className="nav-link">About</a></li>
+              <li><a href="#skills" className="nav-link">Skills</a></li>
+              <li><a href="#projects" className="nav-link">Projects</a></li>
+              <li><a href="#demo" className="nav-link">Interactive Demo</a></li>
+            </ul>
+
+            <button 
+              className="btn-nav-hire"
+              onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+            >
+              Hire Me
+            </button>
+          </header>
+
+          <main className="main-container">
+            {/* Hero Section */}
+            <section id="home" className="hero">
+              <div className="status-pill">
+                <span className="pulse-dot"></span>
+                <span>Available for New Projects • 24h Fast Delivery</span>
+              </div>
+
+              <h1 className="hero-title">
+                Building <span className="gradient-text">World-Class React</span><br />
+                Websites & Modern Interfaces
+              </h1>
+
+              <p className="hero-subtitle">
+                Senior Front-End & React Developer specializing in high-performance web applications, 
+                stunning responsive design, and seamless backend API integration.
+              </p>
+
+              <div className="hero-actions">
+                <button 
+                  className="btn-primary"
+                  onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
+                >
+                  View Featured Work →
+                </button>
+                <button 
+                  className="btn-secondary"
+                  onClick={() => document.getElementById('demo').scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Test Interactive React Widget
+                </button>
+              </div>
+            </section>
+
+            {/* Metrics Row */}
+            <section className="metrics-row">
+              <div className="metric-card">
+                <div className="metric-num">100%</div>
+                <div className="metric-label">Mobile Responsive</div>
+              </div>
+              <div className="metric-card">
+                <div className="metric-num">&lt; 0.8s</div>
+                <div className="metric-label">Lightning Fast Loading</div>
+              </div>
+              <div className="metric-card">
+                <div className="metric-num">24h</div>
+                <div className="metric-label">Rapid Delivery Available</div>
+              </div>
+              <div className="metric-card">
+                <div className="metric-num">5.0 ★</div>
+                <div className="metric-label">Client Satisfaction Score</div>
+              </div>
+            </section>
+
+            {/* Skills Section */}
+            <section id="skills">
+              <div className="section-header">
+                <span className="section-tag">// Core Competencies</span>
+                <h2 className="section-title">Technical Expertise</h2>
+              </div>
+
+              <div className="skills-grid">
+                {SKILLS_DATA.map((skill, idx) => (
+                  <div key={idx} className="skill-card">
+                    <div className="skill-icon">{skill.icon}</div>
+                    <h3 className="skill-title">{skill.title}</h3>
+                    <p className="skill-desc">{skill.description}</p>
+                    <div className="skill-tags">
+                      {skill.tags.map((t, i) => (
+                        <span key={i} className="skill-tag-pill">{t}</span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Featured Projects Section */}
+            <section id="projects">
+              <div className="section-header">
+                <span className="section-tag">// Portfolio Showcase</span>
+                <h2 className="section-title">Featured Projects</h2>
+              </div>
+
+              {/* Category Filter */}
+              <div className="filter-bar">
+                {["All", "React Apps", "Full Stack", "UI/UX"].map((cat) => (
+                  <button
+                    key={cat}
+                    className={`filter-btn ${activeCategory === cat ? 'active' : ''}`}
+                    onClick={() => setActiveCategory(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+
+              {/* Projects Grid */}
+              <div className="projects-grid">
+                {filteredProjects.map((p) => (
+                  <div key={p.id} className="project-card">
+                    <div className="project-preview">
+                      <div className="project-preview-mock">
+                        &lt;Component: {p.title} /&gt;
+                      </div>
+                    </div>
+                    <div className="project-content">
+                      <span className="project-category">{p.category}</span>
+                      <h3 className="project-title">{p.title}</h3>
+                      <p className="project-desc">{p.description}</p>
+                      
+                      <div className="project-tech-stack">
+                        {p.tags.map((tag, i) => (
+                          <span key={i} className="skill-tag-pill">{tag}</span>
+                        ))}
+                      </div>
+
+                      <div className="project-actions">
+                        <button 
+                          className="btn-project btn-project-primary"
+                          onClick={() => alert(`Launching preview for ${p.title}`)}
+                        >
+                          Live Preview
+                        </button>
+                        <button 
+                          className="btn-project btn-project-secondary"
+                          onClick={() => alert(`Viewing React component structure for ${p.title}`)}
+                        >
+                          Source Code
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Live Interactive Widget Showcase */}
+            <section id="demo" className="interactive-section">
+              <div className="demo-flex">
+                <div className="demo-controls">
+                  <span className="section-tag">// Live Proof of React Mastery</span>
+                  <h3 style={{fontSize: '1.6rem', fontWeight: 800}}>
+                    Interactive React State Engine
+                  </h3>
+                  <p style={{color: 'var(--text-muted)', fontSize: '0.92rem'}}>
+                    This widget demonstrates real-time reactive state updates, memoized counters, 
+                    and dynamic theme tokens without full-page reloads.
+                  </p>
+
+                  <div style={{display: 'flex', gap: '10px', marginTop: '10px'}}>
+                    <button 
+                      className="btn-primary"
+                      onClick={() => setVisitorCount(prev => prev + 1)}
+                    >
+                      Increment Live Counter (+1)
+                    </button>
+                    <button 
+                      className="btn-secondary"
+                      onClick={() => setVisitorCount(100)}
+                    >
+                      Reset State
+                    </button>
+                  </div>
+                </div>
+
+                <div className="demo-screen">
+                  <div style={{color: '#34d399', marginBottom: '12px'}}>
+                    ● React 18 Virtual DOM State:
+                  </div>
+                  <div style={{color: '#e2e8f0', lineHeight: 1.8}}>
+                    <div><strong>Active State Component:</strong> &lt;LiveTracker /&gt;</div>
+                    <div><strong>Simulated Engagements:</strong> <span style={{color: 'var(--accent-cyan)', fontSize: '1.2rem'}}>{visitorCount}</span></div>
+                    <div><strong>Render Cycle:</strong> Optimized (0.1ms)</div>
+                    <div><strong>Hydration Status:</strong> 100% Synchronized</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Contact / Hire Section */}
+            <section id="contact" className="contact-card">
+              <span className="section-tag" style={{display: 'inline-block'}}>// Let's Work Together</span>
+              <h2 style={{fontSize: '2.2rem', fontWeight: 800, marginTop: '8px'}}>
+                Ready to Build Your Portfolio?
+              </h2>
+              <p style={{color: 'var(--text-muted)', marginTop: '10px', fontSize: '1rem'}}>
+                I am ready to deliver a clean, fast, and custom React portfolio website for you today.
+              </p>
+
+              <form className="contact-form" onSubmit={handleContactSubmit}>
+                <input 
+                  type="text" 
+                  className="form-input" 
+                  placeholder="Your Name or Company"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <input 
+                  type="email" 
+                  className="form-input" 
+                  placeholder="Your Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <button type="submit" className="btn-primary" style={{marginTop: '6px'}}>
+                  Send Instant Inquiry 🚀
+                </button>
+              </form>
+
+              {formSubmitted && (
+                <div className="toast-success" style={{display: 'block'}}>
+                  ✓ Thank you! Your message was received instantly. I will reply within 1 hour!
+                </div>
+              )}
+            </section>
+          </main>
+
+          {/* Footer */}
+          <footer>
+            <div>© 2026 React Portfolio Specialist. All rights reserved.</div>
+            <div className="footer-links">
+              <a href="#home" className="footer-link">Back to Top ↑</a>
+              <a href="https://laborx.com" target="_blank" className="footer-link">LaborX Verified Profile</a>
+            </div>
+          </footer>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
