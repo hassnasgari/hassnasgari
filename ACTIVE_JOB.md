@@ -65,41 +65,49 @@
 
 ---
 
-## Active Bounties (Superteam Earn - Total Prize Pool: $1,800 USDC)
+## Past Bounties (Superteam Earn - Concluded)
 
 ### 1. Spout Finance Product Feedback (Beta Intelligence Challenge)
 - **Sponsor:** Spout Finance
 - **Platform:** Superteam Earn (Global)
-- **Total Prize Pool:** 1,000 USDC (1st: 250, 2nd: 200, 3rd: 150, 4th: 100, 5th: 100, +200)
-- **Status:** SUBMITTED & RECEIVED! (Confirmed on-chain submission with Confetti)
-- **Winner Announcement:** September 29, 2026
-- **Live Submission Deliverable:**
-  - `https://github.com/hassnasgari/hassnasgari/blob/main/spout_finance_review/SPOUT_FINANCE_DEEP_DIVE_REPORT.md`
-- **Scope:** 0% interest covered call model teardown, 50% LTV dynamics, UX friction audit, and 5 strategic product recommendations.
+- **Total Prize Pool:** 1,000 USDC
+- **Status:** Concluded / Completed
+- **Official Winners:**
+  - 1st Place: `DML DeFi` (250 USDC)
+  - 2nd Place: `Vics Clarissa` (200 USDC)
+  - 3rd Place: `OMA OMA` (150 USDC)
+- **Result:** Not selected as winner (Retained in portfolio as deep architectural research asset).
+- **Deliverable:**
+  - `spout_finance_review/SPOUT_FINANCE_DEEP_DIVE_REPORT.md`
 
 ---
 
 ### 2. Moony Tips With Flipcash (X Educational Thread Challenge)
 - **Sponsor:** Moony Foundation Inc.
 - **Platform:** Superteam Earn (Global)
-- **Total Prize Pool:** 300 USDC (1st: 150, 2nd: 100, 3rd: 50)
-- **Status:** SUBMITTED & RECEIVED! (Confirmed on-chain submission with Confetti)
-- **Winner Announcement:** October 06, 2026
-- **Live Submission Deliverable:**
+- **Total Prize Pool:** 300 USDC
+- **Status:** Concluded / Completed
+- **Official Winners:**
+  - 1st Place: `Floreechee Lee` (150 USDC)
+  - 2nd Place: `Anita Udeze` (100 USDC)
+  - 3rd Place: `Oghenefejiro Favour Omoodudu` (50 USDC)
+- **Result:** Not selected as winner.
+- **Deliverable:**
   - `https://x.com/gmlasg/status/2102677046661153031?s=20`
-- **Scope:** 7-part educational thread covering broken creator economy, Flipcash interactive Tip Cards, video overlays, and instant permissionless Moony tipping on Solana with 0% fees.
 
 ---
 
-### 3. Stealf On-Chain Privacy & Shielded Wallets (X Thread Challenge)
+### 3. Stealf On-Chain Privacy & Shielded Wallets (Create a post about Stealf)
 - **Sponsor:** Stealf (@STEALFxyz / @Arcium)
 - **Platform:** Superteam Earn (Global)
 - **Total Prize Pool:** 500 USDC
-- **Status:** SUBMITTED & RECEIVED! (Confirmed on-chain submission with Confetti)
-- **Winner Announcement:** October 04, 2026
-- **Live Submission Deliverable:**
-  - Published on X by `@gmlasg`
-- **Scope:** 5-part educational thread covering public ledger surveillance risks, Stealf dual-wallet architecture (Shielded Wallet + Spending Account), Arcium confidential computing, and open beta traction.
+- **Status:** Concluded / Completed
+- **Official Winners:**
+  - 1st Place: `ebenezer udofa` (200 USDC)
+  - 2nd Place: `Rebal Rehan` (150 USDC)
+  - 3rd Place: `Pauline Mila Alonso` (100 USDC)
+- **Result:** Not selected as winner.
+- **Deliverable:** Published on X by `@gmlasg`
 
 ---
 
