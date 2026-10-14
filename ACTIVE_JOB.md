@@ -70,9 +70,9 @@
 - **Platform:** Superteam Earn (Global)
 - **Total Prize Pool:** 500 USDC (1st: $200, 2nd: $125, 3rd: $80, 4th: $60, 5th: $35)
 - **Deadline:** Today, October 14 (~13 hours remaining)
-- **Status:** Deliverable 100% Prepared & Ready to Post on X
-- **Local Deliverable:**
-  - `swap_io_price_comparison/SWAP_IO_WINNING_THREAD.md`
+- **Status:** Live on X & Awaiting Final Sign-In on Superteam Earn
+- **Live Published Tweet URL:**
+  - `https://x.com/gmlasg/status/2110307825557578135`
 - **Submission Link:**
   - `https://superteam.fun/earn/listing/write-a-thread-or-long-post-price-comparison`
 
