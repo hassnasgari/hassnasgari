@@ -63,6 +63,19 @@
 - **Status:** Declined by client (Application Declined)
 - **Local Asset Retained:** `restaurant_food_delivery_app` (Complete production-ready food delivery & grocery web app template retained).
 
+## Active Bounties (Superteam Earn)
+
+### 1. Write a Thread or Long Post: Price Comparison (swap.io)
+- **Sponsor:** swap.io & Superteam
+- **Platform:** Superteam Earn (Global)
+- **Total Prize Pool:** 500 USDC (1st: $200, 2nd: $125, 3rd: $80, 4th: $60, 5th: $35)
+- **Deadline:** Today, October 14 (~13 hours remaining)
+- **Status:** Deliverable 100% Prepared & Ready to Post on X
+- **Local Deliverable:**
+  - `swap_io_price_comparison/SWAP_IO_WINNING_THREAD.md`
+- **Submission Link:**
+  - `https://superteam.fun/earn/listing/write-a-thread-or-long-post-price-comparison`
+
 ---
 
 ## Past Bounties (Superteam Earn - Concluded)
