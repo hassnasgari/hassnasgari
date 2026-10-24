@@ -1,6 +1,6 @@
 # Active Job Tracking - LaborX
 
-## Active Offers Sent (Total Pipeline Value: $1,170 USD)
+## Active Offers Sent (Total Pipeline Value: $1,670 USD)
 
 ### 1. simple server to serve as access for my SQLite Database
 - **Client:** Aimen
@@ -44,6 +44,22 @@
   - `coingecko_bot_enhancer\run_test.bat`
   - `market_summary.txt`
 - **Focus:** Rate limiting (HTTP 429), exponential backoff, resilient error handling, identical .txt format.
+
+---
+
+### 5. Senior Android Reverse Engineer / Mobile Security Consultant
+- **Client:** Axel peace
+- **Budget:** $500 USD (USDT / Crypto Escrow)
+- **Status:** Application & Delivery Package 100% Ready
+- **Delivery Time:** 1-2 Days (Immediate start upon escrow funding)
+- **Local Deliverables:**
+  - `android_security_audit_kit\apk_security_analyzer.py`
+  - `android_security_audit_kit\test_analyzer.py`
+  - `android_security_audit_kit\run_test.bat`
+  - `android_security_audit_kit\ANDROID_SECURITY_ASSESSMENT_PROPOSAL.md`
+- **Job URL:**
+  `https://laborx.com/jobs/senior-android-reverse-engineer-mobile-security-consultant-105141`
+- **Focus:** ART runtime analysis, ARM64 JNI hooks, Play Integrity token decryption, Keystore attestation, Frida dynamic instrumentation.
 
 ---
 
