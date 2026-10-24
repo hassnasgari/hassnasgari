@@ -1,6 +1,6 @@
 # Active Job Tracking - LaborX
 
-## Active Offers Sent (Total Pipeline Value: $1,670 USD)
+## Active Offers Sent (Total Pipeline Value: $870 USD)
 
 ### 1. simple server to serve as access for my SQLite Database
 - **Client:** Aimen
@@ -25,16 +25,7 @@
 
 ---
 
-### 3. AI Project Partner
-- **Client:** joe guru
-- **Budget:** $800 USD (USDT / Crypto Escrow)
-- **Status:** Offer Sent (Waiting for client response)
-- **Delivery Time:** 1 Day / Milestone-based
-- **Focus:** AI-augmented engineering, automation pipelines, backend architecture.
-
----
-
-### 4. Enhance CoinGecko Bot Reliability
+### 3. Enhance CoinGecko Bot Reliability
 - **Client:** Morty Sheko
 - **Budget:** $300 USD (USDT / Crypto Escrow)
 - **Status:** Offer Sent (Deliverable 100% built & tested on local system)
@@ -47,7 +38,7 @@
 
 ---
 
-### 5. Senior Android Reverse Engineer / Mobile Security Consultant
+### 4. Senior Android Reverse Engineer / Mobile Security Consultant
 - **Client:** Axel peace
 - **Budget:** $500 USD (USDT / Crypto Escrow)
 - **Status:** Application & Delivery Package 100% Ready
@@ -65,7 +56,15 @@
 
 ## Closed / Declined Offers
 
-### 1. react developer for portfolio website
+### 1. AI Project Partner
+- **Client:** joe guru
+- **Budget:** $800 USD
+- **Status:** Declined by client (24 Oct 2026)
+- **Notes:** Notification received on dashboard.
+
+---
+
+### 2. react developer for portfolio website
 - **Client:** NIKHIL KADAM
 - **Budget:** $60 USD
 - **Status:** Declined by client (23 Sep 2026)
@@ -73,7 +72,7 @@
 
 ---
 
-### 2. build restaurant food delivery grocery web app
+### 3. build restaurant food delivery grocery web app
 - **Client:** Riad Hifri
 - **Budget:** $500 USD
 - **Status:** Declined by client (Application Declined)
