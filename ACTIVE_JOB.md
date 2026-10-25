@@ -156,7 +156,23 @@
   - `https://github.com/hassnasgari/hassnasgari/tree/main/anna_agentic_ai_studio`
 - **Scope:** Autonomous multi-agent AI orchestrator with Executa tool calling engine, schema 2 compliance, and verified bundle.
 
+---
 
+### 2. Cortensor Hackathon #5 (Agentic AI & Decentralized Inference)
+- **Sponsor:** Cortensor
+- **Platform:** DoraHacks (Global)
+- **Submission Type:** GitHub Repository / BUIDL (No Twitter required)
+- **Focus:** Agentic AI, Autonomous Execution Tools, OpenAI/LLM Tool-calling & SDK
+- **Status:** Target Candidate (Readily powered by local `anna_agentic_ai_studio`)
 
+---
 
+## High-Value Direct Gigs (LaborX - Non-Twitter / Direct Crypto Escrow)
+
+### 1. Trading Platform – Security Fix, Feature Completion & Deployment
+- **Client:** LaborX Verified Client
+- **Budget:** $800 USD (USDT / Crypto Escrow)
+- **Submission Method:** Direct Proposal + GitHub Profile (No Twitter required)
+- **Proposal Deliverable Created:** `trading_platform_audit_proposal.md`
+- **Scope:** Full-stack security remediation, PostgreSQL/Prisma transaction integrity, automated trading bot simulation & live safety guards.
 
