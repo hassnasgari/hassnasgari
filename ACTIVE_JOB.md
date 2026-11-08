@@ -78,24 +78,25 @@
 - **Status:** Declined by client (Application Declined)
 - **Local Asset Retained:** `restaurant_food_delivery_app` (Complete production-ready food delivery & grocery web app template retained).
 
-## Active Bounties (Superteam Earn)
+## Past Bounties (Superteam Earn - Concluded)
 
 ### 1. Write a Thread or Long Post: Price Comparison (swap.io)
 - **Sponsor:** swap.io & Superteam
 - **Platform:** Superteam Earn (Global)
 - **Total Prize Pool:** 500 USDC (1st: $200, 2nd: $125, 3rd: $80, 4th: $60, 5th: $35)
-- **Deadline:** Today, October 14 (~13 hours remaining)
-- **Status:** SUBMITTED & RECEIVED! (Confirmed on Superteam Earn)
+- **Total Submissions:** 113 Submissions worldwide
+- **Status:** Concluded / Winners Announced
+- **Official Winners:**
+  - 1st Place: `SharpEdge` (200 USDC)
+  - 2nd Place: `Mubarak Olokode` (125 USDC)
+  - 3rd Place: `Julz Cynthia` (80 USDC)
+- **Result:** Not selected in Top 5 (Retained in portfolio as high-grade Solana DEX benchmark asset).
 - **Live Published Tweet URL:**
   - `https://x.com/gmlasg/status/2110307825557578135`
-- **Submission Deliverable:**
+- **Deliverable:**
   - `swap_io_price_comparison/SWAP_IO_WINNING_THREAD.md`
-- **Submission Link:**
-  - `https://superteam.fun/earn/listing/write-a-thread-or-long-post-price-comparison`
 
 ---
-
-## Past Bounties (Superteam Earn - Concluded)
 
 ### 1. Spout Finance Product Feedback (Beta Intelligence Challenge)
 - **Sponsor:** Spout Finance
@@ -143,17 +144,17 @@
 
 ## Active Hackathons (DoraHacks - Total Prize Pool: $6,000 USD + $5,000 Monthly Grants)
 
-### 1. Anna AI App Builder Program
-- **Sponsor:** Anna AI OS
+### 1. Anna AI App Builder Program & Official DoraHacks BUIDL
+- **Sponsor:** Anna AI OS & DoraHacks
 - **Platform:** DoraHacks (Global)
 - **Total Prize Pool:** Up to $6,000 USD per App + Up to $5,000 Monthly Grants
-- **Status:** OFFICIAL V1.0.1 SUBMITTED & PENDING REVIEW ON ANNA OS!
+- **Status:** OFFICIAL BUIDL CREATED & SUBMITTED ON DORAHACKS! (Nov 8, 2026)
+- **DoraHacks BUIDL:** `Anna Agentic Studio | Autonomous Multi-Agent AI Orchestrator`
+- **Owner / Builder:** `@hassnasgari` (Members: 1)
+- **Connected Repository:** `https://github.com/hassnasgari/hassnasgari`
 - **Anna Platform App:** `@hassan-asgari/anna-agentic-studio` (App ID: 349)
 - **Anna Platform URL:** `https://anna.partners/anna-apps/@hassan-asgari/anna-agentic-studio`
-- **Total Competing Projects:** Only 1 competitor worldwide (`BUIDLS: 1`)
-- **Live BUIDL:** `Anna Agentic Studio`
-- **GitHub Repository:**
-  - `https://github.com/hassnasgari/hassnasgari/tree/main/anna_agentic_ai_studio`
+- **Review State:** Submitted & Pending Admin Approval (Standard verification phase)
 - **Scope:** Autonomous multi-agent AI orchestrator with Executa tool calling engine, schema 2 compliance, and verified bundle.
 
 ---
